@@ -4,6 +4,7 @@ import { MainMenu } from './game/scenes/MainMenu';
 
 function App()
 {
+    
     // The sprite can only be moved in the MainMenu Scene
     const [canMoveSprite, setCanMoveSprite] = useState(true);
 
