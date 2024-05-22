@@ -1,14 +1,14 @@
-# Phaser Next.js Template
+# Phaser Remix Template
 
-This is a Phaser 3 project template that uses the Next.js framework. It includes a bridge for React to Phaser game communication, hot-reloading for quick development workflow and scripts to generate production-ready builds.
+This is a Phaser 3 project template that uses the Remix framework. It includes a bridge for React to Phaser game communication, hot-reloading for quick development workflow and scripts to generate production-ready builds.
 
 ### Versions
 
 This template has been updated for:
 
 - [Phaser 3.80.1](https://github.com/phaserjs/phaser)
-- [Next.js 14.2.3](https://github.com/vercel/next.js)
-- [TypeScript 5](https://github.com/microsoft/TypeScript)
+- [Remix 2.9.2](https://github.com/vercel/Remix)
+- [TypeScript 5.1.6](https://github.com/microsoft/TypeScript)
 
 ![screenshot](screenshot.png)
 
@@ -22,37 +22,38 @@ This template has been updated for:
 |---------|-------------|
 | `npm install` | Install project dependencies |
 | `npm run dev` | Launch a development web server |
-| `npm run build` | Create a production build in the `dist` folder |
+| `npm run build` | Create a production build in the `build` folder |
 
 ## Writing Code
 
 After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm run dev`.
 
-The local development server runs on `http://localhost:8080` by default. Please see the Next.js documentation if you wish to change this, or add SSL support.
+The local development server runs on `http://localhost:8080` by default. Please see the Remix documentation if you wish to change this, or add SSL support.
 
-Once the server is running you can edit any of the files in the `src` folder. Next.js will automatically recompile your code and then reload the browser.
+Once the server is running you can edit any of the files in the `app` folder. Remix will automatically recompile your code and then reload the browser.
 
 ## Template Project Structure
 
 We have provided a default project structure to get you started. This is as follows:
 
-- `src/pages/_document.tsx` - A basic Next.js component entry point. It is used to define the `<html>` and `<body>` tags and other globally shared UI.
-- `src` - Contains the Next.js client source code.
-- `src/styles/globals.css` - Some simple global CSS rules to help with page layout. You can enable Tailwind CSS here.
-- `src/page/_app.tsx` - The main Next.js component.
-- `src/App.tsx` - Midleware component used to run Phaser in client mode.
-- `src/game/PhaserGame.tsx` - The React component that initializes the Phaser Game and serve like a bridge between React and Phaser.
-- `src/game/EventBus.ts` - A simple event bus to communicate between React and Phaser.
-- `src/game` - Contains the game source code.
-- `src/game/main.tsx` - The main **game** entry point. This contains the game configuration and start the game.
-- `src/game/scenes/` - The Phaser Scenes are in this folder.
+- `app/root.tsx` - A basic Remix component entry point. It is used to define the `<html>` and `<body>` tags and other globally shared UI.
+- `app/routes/_index.tsx` - A basic entry for application routes (file-system based router). In this case it is the root route.
+- `app` - Contains the Remix source code.
+- `app/styles/globals.css` - Some simple global CSS rules to help with page layout. You can enable Tailwind CSS here.
+- `app/app.client.tsx` - Midleware component used to run Phaser in client mode.
+- `app/game/PhaserGame.tsx` - The React component that initializes the Phaser Game and serve like a bridge between React and Phaser.
+- `app/game/EventBus.ts` - A simple event bus to communicate between React and Phaser.
+- `app/game` - Contains the game source code.
+- `app/game/main.tsx` - The main **game** entry point. This contains the game configuration and start the game.
+- `app/game/scenes/` - The Phaser Scenes are in this folder.
 - `public/favicon.png` - The default favicon for the project.
 - `public/assets` - Contains the static assets used by the game.
+
 ## React Bridge
 
 The `PhaserGame.tsx` component is the bridge between React and Phaser. It initializes the Phaser game and passes events between the two.
 
-To communicate between React and Phaser, you can use the **EventBus.js** file. This is a simple event bus that allows you to emit and listen for events from both React and Phaser.
+To communicate between React and Phaser, you can use the **EventBus.ts** file. This is a simple event bus that allows you to emit and listen for events from both React and Phaser.
 
 ```js
 // In React
@@ -148,19 +149,19 @@ preload ()
 }
 ```
 
-When you issue the `npm run build` command, all static assets are automatically copied to the `dist/assets` folder.
+When you issue the `npm run build` command, all static assets are automatically copied to the `build/client/assets` folder.
 
 ## Deploying to Production
 
-After you run the `npm run build` command, your code will be built into a single bundle and saved to the `dist` folder, along with any other assets your project imported, or stored in the public assets folder.
+After you run the `npm run build` command, your code will be built into a single bundle and saved to the `build` folder, along with any other assets your project imported, or stored in the public assets folder.
 
-In order to deploy your game, you will need to upload *all* of the contents of the `dist` folder to a public facing web server.
+In order to deploy your game, you will need to upload *all* of the contents of the `build` folder to a public facing web server.
 
 ## Customizing the Template
 
-### Next.js
+### Remix
 
-If you want to customize your build, such as adding plugin (i.e. for loading CSS or fonts), you can modify the `next.config.mjs` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json`. Please see the [Next.js documentation](https://nextjs.org/docs) for more information.
+If you want to customize your build, such as adding plugin (i.e. for loading CSS or fonts), you can modify the `vite/config.dev.mjs` of `vite/config.prod.mjs` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json`. Please see the [Remix documentation](https://remix.run/docs/en/main) for more information.
 
 ## Join the Phaser Community!
 

@@ -6,11 +6,11 @@ export const links: LinksFunction = () => {
     return [
         {
             rel: 'stylesheet',
-            href: '/style.css',
+            href: 'styles/globals.css',
         },
         {
             rel: 'icon',
-            href: '/favicon.png',
+            href: 'favicon.png',
             type: 'image/png',
         }
     ]
