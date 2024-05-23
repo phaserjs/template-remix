@@ -7,11 +7,6 @@ export const links: LinksFunction = () => {
         {
             rel: 'stylesheet',
             href: 'styles/globals.css',
-        },
-        {
-            rel: 'icon',
-            href: 'favicon.png',
-            type: 'image/png',
         }
     ]
 }
