@@ -2,7 +2,7 @@
     "name": "template-remix",
     "description": "A Phaser 3 Remix project template that demonstrates Remix with React communication and uses Vite for bundling.",
     "sideEffects": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "module",
     "repository": {
         "type": "git",
@@ -23,8 +23,10 @@
         "typescript"
     ],
     "scripts": {
-        "build": "remix vite:build --config vite/config.prod.mjs",
-        "dev": "remix vite:dev --config vite/config.dev.mjs",
+        "dev": "node log.js dev & remix vite:dev --config vite/config.dev.mjs",
+        "build": "node log.js build & remix vite:build --config vite/config.prod.mjs",
+        "dev-nolog": "remix vite:dev --config vite/config.dev.mjs",
+        "build-nolog": "remix vite:build --config vite/config.prod.mjs",
         "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
         "start": "remix-serve ./build/server/index.js",
         "typecheck": "tsc"
@@ -34,7 +36,7 @@
         "@remix-run/react": "^2.9.2",
         "@remix-run/serve": "^2.9.2",
         "isbot": "^4.1.0",
-        "phaser": "3.80.1",
+        "phaser": "^3.85.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "remix-utils": "^7.6.0"
