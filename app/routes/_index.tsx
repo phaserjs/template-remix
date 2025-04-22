@@ -1,5 +1,4 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
-import { ClientOnly } from 'remix-utils/client-only';
 import App from '../app.client';
 
 export const links: LinksFunction = () => {
@@ -20,8 +19,6 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <ClientOnly fallback={<h3>Loading Game...</h3>}>
-            { () => <App /> }
-        </ClientOnly>
+        <App />
     );
 }

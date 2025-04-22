@@ -7,7 +7,7 @@ This is a Phaser 3 project template that uses the Remix framework. It includes a
 This template has been updated for:
 
 - [Phaser 3.88.2](https://github.com/phaserjs/phaser)
-- [Remix 2.9.2](https://github.com/vercel/Remix)
+- [Remix 2.16.20](https://github.com/vercel/Remix)
 - [TypeScript 5.1.6](https://github.com/microsoft/TypeScript)
 
 ![screenshot](screenshot.png)
@@ -37,19 +37,20 @@ Once the server is running you can edit any of the files in the `app` folder. Re
 ## Template Project Structure
 
 We have provided a default project structure to get you started. This is as follows:
-
-- `app/root.tsx` - A basic Remix component entry point. It is used to define the `<html>` and `<body>` tags and other globally shared UI.
-- `app/routes/_index.tsx` - A basic entry for application routes (file-system based router). In this case it is the root route.
-- `app` - Contains the Remix source code.
-- `app/styles/globals.css` - Some simple global CSS rules to help with page layout. You can enable Tailwind CSS here.
-- `app/app.client.tsx` - Midleware component used to run Phaser in client mode.
-- `app/game/PhaserGame.tsx` - The React component that initializes the Phaser Game and serve like a bridge between React and Phaser.
-- `app/game/EventBus.ts` - A simple event bus to communicate between React and Phaser.
-- `app/game` - Contains the game source code.
-- `app/game/main.tsx` - The main **game** entry point. This contains the game configuration and start the game.
-- `app/game/scenes/` - The Phaser Scenes are in this folder.
-- `public/favicon.png` - The default favicon for the project.
-- `public/assets` - Contains the static assets used by the game.
+| Path                          | Description                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| `app/root.tsx`                | A basic Remix component entry point. It is used to define the `<html>` and `<body>` tags and other globally shared UI. |
+| `app/routes/_index.tsx`       | A basic entry for application routes (file-system based router). In this case, it is the root route. |
+| `app/PhaserGame.tsx`     | The React component that initializes the Phaser Game and serves as a bridge between React and Phaser. |
+| `app`                         | Contains the Remix source code.                                             |
+| `app/styles/globals.css`      | Some simple global CSS rules to help with page layout. You can enable Tailwind CSS here. |
+| `app/app.client.tsx`          | Middleware component used to run Phaser in client mode.                     |
+| `app/game/EventBus.ts`        | A simple event bus to communicate between React and Phaser.                 |
+| `app/game`                    | Contains the game source code.                                              |
+| `app/game/main.tsx`           | The main **game** entry point. This contains the game configuration and starts the game. |
+| `app/game/scenes/`            | The Phaser Scenes are in this folder.                                       |
+| `public/favicon.png`          | The default favicon for the project.                                        |
+| `public/assets`               | Contains the static assets used by the game.                                |
 
 ## React Bridge
 
@@ -224,6 +225,6 @@ We love to see what developers like you create with Phaser! It really motivates 
 
 Created by [Phaser Studio](mailto:support@phaser.io). Powered by coffee, anime, pixels and love.
 
-The Phaser logo and characters are &copy; 2011 - 2024 Phaser Studio Inc.
+The Phaser logo and characters are &copy; 2011 - 2025 Phaser Studio Inc.
 
 All rights reserved.
