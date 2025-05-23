@@ -6,8 +6,8 @@ This is a Phaser 3 project template that uses the Remix framework. It includes a
 
 This template has been updated for:
 
-- [Phaser 3.88.2](https://github.com/phaserjs/phaser)
-- [Remix 2.16.20](https://github.com/vercel/Remix)
+- [Phaser 3.90.0](https://github.com/phaserjs/phaser)
+- [Remix 2.16.5](https://github.com/vercel/Remix)
 - [TypeScript 5.1.6](https://github.com/microsoft/TypeScript)
 
 ![screenshot](screenshot.png)
