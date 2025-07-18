@@ -1,6 +1,6 @@
 {
-    "name": "template-remix",
-    "description": "A Phaser 3 Remix project template that demonstrates Remix with React communication and uses Vite for bundling.",
+    "name": "template-react-router-v7",
+    "description": "A Phaser 3 React Router project template that demonstrates React Router v7 with React communication and uses Vite for bundling.",
     "sideEffects": false,
     "version": "1.1.0",
     "type": "module",
@@ -18,30 +18,31 @@
     "keywords": [
         "phaser",
         "phaser3",
-        "remix",
+        "react-router",
         "vite",
         "typescript"
     ],
     "scripts": {
-        "dev": "node log.js dev & remix vite:dev --config vite/config.dev.mjs",
-        "build": "node log.js build & remix vite:build --config vite/config.prod.mjs",
-        "dev-nolog": "remix vite:dev --config vite/config.dev.mjs",
-        "build-nolog": "remix vite:build --config vite/config.prod.mjs",
+        "dev": "node log.js dev & react-router dev",
+        "dev-nolog": "react-router dev",
+        "build": "node log.js build & react-router build",
+        "build-nolog": "react-router build",
         "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-        "start": "remix-serve ./build/server/index.js",
-        "typecheck": "tsc"
+        "start": "serve -s build/client -l 3000",
+        "typecheck": "react-router typegen && tsc"
     },
     "dependencies": {
-        "@remix-run/node": "2.16.5",
-        "@remix-run/react": "2.16.5",
-        "@remix-run/serve": "2.16.5",
-        "isbot": "^4.1.0",
+        "@react-router/fs-routes": "^7.7.0",
+        "@react-router/node": "^7.7.0",
+        "isbot": "^5.1.28",
         "phaser": "^3.90.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router": "^7.0.0"
     },
     "devDependencies": {
-        "@remix-run/dev": "2.16.5",
+        "@react-router/dev": "^7.0.0",
+        "@types/node": "^24.0.14",
         "@types/react": "^18.2.20",
         "@types/react-dom": "^18.2.7",
         "@typescript-eslint/eslint-plugin": "^6.7.4",
@@ -52,6 +53,7 @@
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
+        "serve": "^14.2.4",
         "typescript": "^5.1.6",
         "vite": "^5.1.0",
         "vite-tsconfig-paths": "^4.2.1"
